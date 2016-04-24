@@ -6,4 +6,4 @@
 					.image_wrapper
 						= link_to recipe do
 							=image_tag recipe.image.url(:medium)
-					%center= link_to recipe.title, recipe
+					%center= link_to recipe.title.titleize, recipe

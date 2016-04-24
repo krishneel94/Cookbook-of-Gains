@@ -4,39 +4,43 @@
 			.recipe
 				.image_wrapper
 					=image_tag @recipe.image.url(:medium)	
-					
-			= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-success btn-md" do
-				%span.glyphicon.glyphicon-heart
-					= @recipe.get_upvotes.size	
-			= link_to dislike_recipe_path(@recipe), method: :put, class: "btn btn-danger btn-md" do
-				%span.glyphicon.glyphicon-thumbs-down
-					= @recipe.get_downvotes.size
+
 		.col-md-8
 			#recipe_info
-				%h1= @recipe.title
+				= link_to dislike_recipe_path(@recipe), method: :put, class: "btn btn-danger btn-lg pull-right" do
+					%span.glyphicon.glyphicon-thumbs-down
+						= @recipe.get_downvotes.size
+
+				= link_to like_recipe_path(@recipe), method: :put, class: "btn btn-success btn-lg btn-space pull-right" do
+					%span.glyphicon.glyphicon-heart
+						= @recipe.get_upvotes.size	
+
+				%h1= @recipe.title.titleize
 				%p
 					Submitted by
-					= @recipe.user.email
-				%p.description= @recipe.description
+					= @recipe.user.email.capitalize
+				%br
+					%i.description= @recipe.description.capitalize
 
 	.row
 		.col-md-6
 			#ingredients
-				%h2 Ingredients
-				%ul
-					- @recipe.ingredients.each do |ingredient|
-						%li= ingredient.name
-
+				.description
+					%h1 Ingredients
+					%ul
+						- @recipe.ingredients.each do |ingredient|
+							%li= ingredient.name.capitalize
 		.col-md-6
 			#directions
-				%h2 Directions
-				%ul
-					- @recipe.directions.each do |direction|
-						%li= direction.step
+				.description
+					%h1 Instructions
+					%ul
+						- @recipe.directions.each do |direction|
+							%li= direction.step.capitalize
 
 	.row
 		.col-md-12
 			= link_to "Back", root_path, class: "btn btn-default"
 			- if user_signed_in? && (@recipe.user.id == current_user.id)
-				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
-				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+				= link_to "Edit", edit_recipe_path, class: "btn btn-primary pull-right" 
+				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger btn-space pull-right"

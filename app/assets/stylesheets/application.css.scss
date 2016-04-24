@@ -26,7 +26,11 @@
 $red: #DB6161;
 
 body {
-	background: rgb(235, 238, 243);
+	background-image: url(http://orig05.deviantart.net/4a93/f/2016/114/4/f/_heaven__by_era_7-da03z7r.jpg);
+	background-size: cover;                
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    background-attachment: fixed;
 }
 
 .main_content {
@@ -41,6 +45,7 @@ body {
 	@include box-shadow;
 	background: white;
 	font-weight: bold;
+	color: $red;
 }
 
 .navbar {
@@ -53,13 +58,15 @@ body {
 		font-weight: bold;
 		font-size: 25px;
 		a {
-			color: $red;
+			color: #563D7C;
 		}
 	}
 }
 
 .recipe {
-	background: white;
+	background: #F8F8F8;
+	border-style: groove;
+	border-color: #E8E8E8;
 	border-radius: 5px;
 	margin-bottom: 40px;
 	@include box-shadow;
@@ -81,9 +88,12 @@ body {
 	center {
 		padding: 15px 5%;
 		margin: 0;
-		font-size: 20px;
-		font-weight: normal;
-		line-height: 1.5;
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 24px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 100;
+		line-height: 30px;
 		a {
 			color: $red;
 		}
@@ -95,7 +105,7 @@ body {
 }
 
 #recipe_info {
-	background: white;
+	background: #F8F8F8;
 	@include box-shadow;
 	min-height: 360px;
 	max-height: 360px;
@@ -107,7 +117,15 @@ body {
 }
 
  #ingredients, #directions {
-	background: white;
+	h1 {
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 36px;
+		font-weight: normal;
+		color: black;
+		text-decoration: underline;
+	}	
+ 	.description{
+	background: #F8F8F8;
 	@include box-shadow;
 	min-height: 450px;
 	max-height: 450px;
@@ -117,6 +135,7 @@ body {
 	border-style: groove;
 	border-color: #E8E8E8;
  }
+}
 
 .recipe_image {
 	max-width: 100%;
@@ -126,12 +145,16 @@ body {
 
 #recipe_info {
 	h1 {
+		margin-top: 0cm;
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 36px;
 		font-weight: normal;
 		color: $red;
+		text-decoration: underline;
 	}
 	.description {
-		color: #8A8A8A;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+		color: black;
 		font-size: 20px;
 	}
 }
@@ -141,8 +164,11 @@ body {
 	ul, ol {
 		padding-left: 18px;
 		li {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+			color: black;
 			padding: 1em 0;
 			border-bottom: 1px solid #EAEAEA;
+			font-size: 16px;
 		}
 	}
 }
@@ -161,4 +187,12 @@ body {
 }
 .add-button {
 	margin-top: 25px;
+}
+
+.simple_form .error {
+  color: #DB6161;
+}
+
+.btn-space {
+    margin-right: 10px;
 }
