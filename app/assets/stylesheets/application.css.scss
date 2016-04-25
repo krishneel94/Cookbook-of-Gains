@@ -95,7 +95,7 @@ body {
 		font-weight: 100;
 		line-height: 30px;
 		a {
-			color: $red;
+			color: #563D7C;
 		}
 	}
 }
@@ -149,8 +149,13 @@ body {
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 36px;
 		font-weight: normal;
-		color: $red;
+		color: black;
 		text-decoration: underline;
+	}
+	.font{
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 12px;
+		color: black;
 	}
 	.description {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
@@ -195,4 +200,8 @@ body {
 
 .btn-space {
     margin-right: 10px;
+}
+
+.custom {
+    width: 177px !important;
 }
