@@ -1,11 +1,11 @@
-- @recipe.each_slice(3) do |recipe|
+- @recipe.each_slice(4) do |recipe|
 	.row
 		- recipe.each do |recipe|
-			.col-md-4
+			.col-md-3
 				.recipe
 					.image_wrapper
 						= link_to recipe do
-							=image_tag recipe.image.url(:medium)
+							= image_tag recipe.image.url(:medium)
 					%center= link_to recipe.title.titleize, recipe
 					.btn-group
 						= link_to like_recipe_path(recipe), method: :put, class: "btn btn-success btn-sm custom" do
