@@ -44,3 +44,8 @@
 			- if user_signed_in? && ((@recipe.user.id == current_user.id) || current_user.admin?)
 				= link_to "Edit", edit_recipe_path, class: "btn btn-primary pull-right" 
 				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger btn-space pull-right"
+%h3 Comments
+= render @recipe.comments
+
+%h4 New Comment		
+= render "comments/form"
